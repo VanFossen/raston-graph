@@ -1,7 +1,28 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   height: 100vh;
+}
+
+#button {
+  margin: 10px;
+}
+
+#graph {
+
+}
+
+.dygraph-label.dygraph-xlabel {
+  text-align: center;
+}
+
+.dygraph-label.dygraph-ylabel {
+  text-align: center;
+  transform: rotate(-90deg);
+}
+
+.dygraph-label.dygraph-title {
+
 }

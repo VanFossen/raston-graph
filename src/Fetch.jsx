@@ -29,15 +29,6 @@ function Fetch({ setData }) {
     let dataObject = JSON.parse(data);
 
     let finalData = "";
-    if (dataObject.data.x.length === dataObject.data.y.length) {
-      console.log("X and Y are the same length!");
-      console.log(
-        "  X: " + dataObject.data.x.length + "   Y: " + dataObject.data.y.length
-      );
-    } else {
-      console.log("X and Y are not the same length!");
-    }
-
     for (let i = 0; i < dataObject.data.x.length; i++) {
       finalData += dataObject.data.x[i] + "\t" + dataObject.data.y[i] + "\r\n";
     }
@@ -45,7 +36,7 @@ function Fetch({ setData }) {
     setData(finalData);
   }
 
-  return <button onClick={fetchRadis}>Perform Fetch Request</button>;
+  return <button id="button" onClick={fetchRadis}>Perform Fetch Request</button>;
 }
 
 export default Fetch;

@@ -1,7 +1,7 @@
 import React from "react";
 // import Dygraph from "dygraphs";
 
-function Graph() {
+function Graph({ data }) {
   return <p>graph goes here</p>;
 }
 

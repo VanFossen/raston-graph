@@ -1,12 +1,17 @@
+import { useState } from "react";
 import "./App.css";
-import Fetch from './Fetch';
+import Fetch from "./Fetch";
 import Graph from "./Graph";
 
 function App() {
-  return <div className="App">
-    <Fetch />
-    <Graph />
-  </div>;
+  const [data, setData] = useState("");
+
+  return (
+    <div className="App">
+      <Fetch setData={setData} />
+      <Graph data={data} />
+    </div>
+  );
 }
 
 export default App;

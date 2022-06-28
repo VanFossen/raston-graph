@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/raston-dygraphs/static/css/main.14daec5c.css",
-    "main.js": "/raston-dygraphs/static/js/main.13d059b6.js",
+    "main.js": "/raston-dygraphs/static/js/main.19ef064c.js",
     "index.html": "/raston-dygraphs/index.html",
     "main.14daec5c.css.map": "/raston-dygraphs/static/css/main.14daec5c.css.map",
-    "main.13d059b6.js.map": "/raston-dygraphs/static/js/main.13d059b6.js.map"
+    "main.19ef064c.js.map": "/raston-dygraphs/static/js/main.19ef064c.js.map"
   },
   "entrypoints": [
     "static/css/main.14daec5c.css",
-    "static/js/main.13d059b6.js"
+    "static/js/main.19ef064c.js"
   ]
 }

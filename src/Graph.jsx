@@ -1,22 +1,62 @@
 import React, { useEffect } from "react";
-import Dygraph from "dygraphs";
+import {Line} from 'react-chartjs-2';
+import { Chart, registerables} from 'chart.js';
+Chart.register(...registerables);
 
-function Graph({ data }) {
-  const generateGraph = () => {
-    return new Dygraph(document.getElementById("graph"), data, {
-      legend: "always",
-      xlabel: "Wavenumber (cm-1)",
-      ylabel: "Absorbance(-In(I/IO))"
-    });
-  };
+function Graph({data}) {
 
-  useEffect(() => {
-    if (data) {
-      generateGraph();
+  if(data) {
+    const fulldata = {
+      labels: data.data.x,
+      datasets: [{
+        label: '',
+        data: data.data.y,
+        barThickness: 1,
+        backgroundColor: 'purple',
+        borderColor: 'hsl(30,88%,69%)'
+
+      }]
     }
-  });
 
-  return <div id="graph"></div>;
+    const options = {
+      plugins:{
+        legend:{
+          display: false
+        }
+      },
+      scales:{
+        x:{
+          type: 'linear',
+          title:{
+            display: true,
+            text: "Wavenumber cm-1"
+          },
+        },
+        y:{
+          title:{
+            display: true,
+            text: "Absorbance (-ln(I/IO))"
+          },
+        }
+      }
+    }
+
+
+    return(
+      <div>
+        <Line
+          height={'600'}
+          width={'1000'}
+          data={fulldata}
+          options={options}
+        />
+
+      </div>
+    );
+  } else {
+    return;
+  }
+
 }
 
 export default Graph;

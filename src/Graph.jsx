@@ -4,11 +4,9 @@ import Dygraph from "dygraphs";
 function Graph({ data }) {
   const generateGraph = () => {
     return new Dygraph(document.getElementById("graph"), data, {
-      customBars: true,
       legend: "always",
       xlabel: "Wavenumber (cm-1)",
       ylabel: "Absorbance(-In(I/IO))",
-      showRangeSelector: true,
     });
   };
 

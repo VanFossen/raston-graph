@@ -30,12 +30,3 @@
 label {
   padding-top: 10px;
 }
-
-#tgas,
-#pressure,
-#path,
-#molecule,
-#mole {
-  pointer-events: none;
-  background-color: lightgrey;
-}

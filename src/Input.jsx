@@ -1,63 +1,97 @@
 import React from "react";
 
-function Input() {
+function Input({ params, setParams }) {
   return (
     <div id="input-div">
-      <label for="database">Database</label>
-      <select name="database" id="database">
+      <label htmlFor="database">Database</label>
+      <select
+        id="database"
+        defaultValue={params.database}
+        onChange={(e) => setParams({ ...params, database: e.target.value })}
+      >
         <option value="hitran">HITRAN</option>
+        <option value="geisa">GEISA</option>
       </select>
 
-      <label for="mode">Mode</label>
-      <select name="mode" id="mode">
+      <label htmlFor="mode">Mode</label>
+      <select
+        id="mode"
+        defaultValue={params.mode}
+        onChange={(e) => setParams({ ...params, mode: e.target.value })}
+      >
         <option value="absorbance">Absorbance</option>
+        <option value="radiance">Radiance</option>
+        <option value="transmittance">Transmittance</option>
       </select>
 
-      <label for="min-range">
+      <label htmlFor="min-range">
         Wavenumber MIN range (cm<sup>-1</sup>)
       </label>
       <input
-        name="min-range"
         id="min-range"
         type="number"
-        value={1900}
+        defaultValue={params.min_wavenumber_range}
         min={500}
         max={10000}
+        onChange={(e) =>
+          setParams({ ...params, min_wavenumber_range: e.target.value })
+        }
       ></input>
 
-      <label for="max-range">
+      <label htmlFor="max-range">
         Wavenumber MAX range (cm<sup>-1</sup>)
       </label>
       <input
-        name="max-range"
         id="max-range"
         type="number"
-        value={2300}
+        defaultValue={params.max_wavenumber_range}
         min={500}
         max={10000}
+        onChange={(e) =>
+          setParams({ ...params, max_wavenumber_range: e.target.value })
+        }
       ></input>
 
-      <label for="tgas">Tgas (K)</label>
-      <input name="tgas" id="tgas" type="number" value={300}></input>
-
-      <label for="pressure">Pressure (Bar)</label>
+      <label htmlFor="tgas">Tgas (K)</label>
       <input
-        name="pressure"
+        id="tgas"
+        type="number"
+        defaultValue={params.tgas}
+        onChange={(e) => setParams({ ...params, tgas: e.target.value })}
+      ></input>
+
+      <label htmlFor="pressure">Pressure (Bar)</label>
+      <input
         id="pressure"
         type="number"
-        value={1.01325}
+        defaultValue={params.pressure}
+        onChange={(e) => setParams({ ...params, pressure: e.target.value })}
       ></input>
 
-      <label for="path">Path length (cm)</label>
-      <input name="path" id="path" type="number" value={1}></input>
+      <label htmlFor="path">Path length (cm)</label>
+      <input
+        id="path"
+        type="number"
+        defaultValue={params.path_length}
+        onChange={(e) => setParams({ ...params, path_length: e.target.value })}
+      ></input>
 
-      <label for="molecule">HITRAN 2020 Molecule</label>
-      <select name="molecule" id="molecule">
-        <option value="CO">Absorbance</option>
+      <label htmlFor="molecule">HITRAN 2020 Molecule</label>
+      <select
+        id="molecule"
+        defaultValue={params.molecule}
+        onClick={(e) => setParams({ ...params, molecule: e.target.value })}
+      >
+        <option value="CO">CO</option>
       </select>
 
-      <label for="mole">Mole Fraction</label>
-      <input name="mole" id="mole" type="number" value={0.1}></input>
+      <label htmlFor="mole">Mole Fraction</label>
+      <input
+        id="mole"
+        type="number"
+        defaultValue={params.species[0].mole_fraction}
+        onClick={(e) => setParams({ ...params, mole_fraction: e.target.value })}
+      ></input>
     </div>
   );
 }

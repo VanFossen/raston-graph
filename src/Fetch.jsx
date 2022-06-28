@@ -27,12 +27,7 @@ function Fetch({ setData }) {
 
     let data = await response.text();
     let dataObject = JSON.parse(data);
-
-    let finalData = "";
-    for (let i = 0; i < dataObject.data.x.length; i++) {
-      finalData += dataObject.data.x[i] + "\t" + dataObject.data.y[i] + "\r\n";
-    }
-
+    
     setData(dataObject);
   }
 

@@ -6,14 +6,12 @@
   height: 100vh;
 }
 
+/* button (in Fetch) */
 #button {
   margin: 10px;
 }
 
-#graph {
-
-}
-
+/* Graph */
 .dygraph-label.dygraph-xlabel {
   text-align: center;
 }
@@ -23,6 +21,21 @@
   transform: rotate(-90deg);
 }
 
-.dygraph-label.dygraph-title {
+/* Input */
+#input-div {
+  display: flex;
+  flex-direction: column;
+}
 
+label {
+  padding-top: 10px;
+}
+
+#tgas,
+#pressure,
+#path,
+#molecule,
+#mole {
+  pointer-events: none;
+  background-color: lightgrey;
 }

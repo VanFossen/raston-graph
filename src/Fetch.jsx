@@ -33,7 +33,7 @@ function Fetch({ setData }) {
       finalData += dataObject.data.x[i] + "\t" + dataObject.data.y[i] + "\r\n";
     }
 
-    setData(finalData);
+    setData(dataObject);
   }
 
   return <button id="button" onClick={fetchRadis}>Perform Fetch Request</button>;

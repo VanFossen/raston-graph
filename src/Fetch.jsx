@@ -1,7 +1,9 @@
 import React from "react";
 
-function Fetch({ params, setData }) {
+function Fetch({ params, setData, setLoading }) {
   async function fetchRadis() {
+    setLoading(true);
+
     let response = await fetch("https://api.radis.app/calculate-spectrum", {
       headers: {
         accept: "application/json, text/plain, */*",
@@ -34,6 +36,7 @@ function Fetch({ params, setData }) {
     }
 
     setData(finalData);
+    setLoading(false);
   }
 
   return (

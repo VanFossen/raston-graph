@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Dygraph from "dygraphs";
 
-function Graph({ data }) {
+function Graph({ data, setLoading}) {
   const generateGraph = () => {
     return new Dygraph(document.getElementById("graph"), data, {
       legend: "always",

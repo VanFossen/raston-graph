@@ -31,6 +31,7 @@ function Fetch({ params, setData, setLoading }) {
     let dataObject = JSON.parse(data);
     
     setData(dataObject);
+    setLoading(false);
   }
 
   return (

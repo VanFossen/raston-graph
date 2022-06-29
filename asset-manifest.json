@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/raston-graph/static/css/main.c4a032ea.css",
-    "main.js": "/raston-graph/static/js/main.a811f1be.js",
+    "main.js": "/raston-graph/static/js/main.365b1eec.js",
     "index.html": "/raston-graph/index.html",
     "main.c4a032ea.css.map": "/raston-graph/static/css/main.c4a032ea.css.map",
-    "main.a811f1be.js.map": "/raston-graph/static/js/main.a811f1be.js.map"
+    "main.365b1eec.js.map": "/raston-graph/static/js/main.365b1eec.js.map"
   },
   "entrypoints": [
     "static/css/main.c4a032ea.css",
-    "static/js/main.a811f1be.js"
+    "static/js/main.365b1eec.js"
   ]
 }

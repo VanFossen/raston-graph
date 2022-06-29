@@ -52,3 +52,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* Error */
+#error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+#error p {
+  margin: 0;
+  padding: 0;
+}

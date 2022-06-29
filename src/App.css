@@ -31,6 +31,12 @@ label {
   padding-top: 10px;
 }
 
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
 /* Spinner */
 #spinner {
   border: 16px solid #f3f3f3; /* Light grey */

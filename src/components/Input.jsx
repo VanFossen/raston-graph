@@ -1,28 +1,12 @@
 import React from "react";
+import Database from "./inputs/Database";
 
 function Input({ params, setParams }) {
   return (
     <div id="input-div">
-      <label htmlFor="database">Database</label>
-      <select
-        id="database"
-        defaultValue={params.database}
-        onChange={(e) => setParams({ ...params, database: e.target.value })}
-      >
-        <option value="hitran">HITRAN</option>
-        <option value="geisa">GEISA</option>
-      </select>
 
-      <label htmlFor="mode">Mode</label>
-      <select
-        id="mode"
-        defaultValue={params.mode}
-        onChange={(e) => setParams({ ...params, mode: e.target.value })}
-      >
-        <option value="absorbance">Absorbance</option>
-        <option value="radiance">Radiance</option>
-        <option value="transmittance_noslit">Transmittance</option>
-      </select>
+
+      <Database params={params} setParams={setParams}/>
 
       <label htmlFor="min-range">
         Wavenumber MIN range (cm<sup>-1</sup>)

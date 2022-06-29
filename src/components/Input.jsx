@@ -3,6 +3,7 @@ import Database from "./inputs/Database";
 import MaxWave from "./inputs/MaxWave";
 import MinWave from "./inputs/MinWave";
 import Molecule from "./inputs/Molecule";
+import MoleFraction from "./inputs/MoleFraction";
 import PathLength from "./inputs/PathLength";
 import Pressure from "./inputs/Pressure";
 import Tgas from "./inputs/Tgas";
@@ -24,13 +25,7 @@ function Input({ params, setParams }) {
 
       <Molecule params={params} setParams={setParams} />
 
-      <label htmlFor="mole">Mole Fraction</label>
-      <input
-        id="mole"
-        type="number"
-        defaultValue={params.species[0].mole_fraction}
-        onClick={(e) => setParams({ ...params, mole_fraction: e.target.value })}
-      ></input>
+      <MoleFraction params={params} setParams={setParams} />
     </div>
   );
 }

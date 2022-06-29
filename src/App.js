@@ -39,7 +39,7 @@ function App() {
       {loading && <Spinner />}
       {error && <Error />}
 
-      <Graph data={data} setLoading={setLoading} />
+      {!loading && <Graph data={data} setLoading={setLoading} />}
     </div>
   );
 }

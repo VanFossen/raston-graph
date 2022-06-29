@@ -6,9 +6,9 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(...registerables);
 Chart.register(zoomPlugin);
 
-function Graph({data}) {
+function Graph({ data }) {
 
-  if(data) {
+  if (data) {
     const fulldata = {
       labels: data.data.x,
       datasets: [{
@@ -41,39 +41,31 @@ function Graph({data}) {
           }
         }
       },
-      scales:{
-        x:{
-          type: 'linear',
-          title:{
+      scales: {
+        x: {
+          type: "linear",
+          title: {
             display: true,
-            text: "Wavenumber cm-1"
+            text: "Wavenumber cm-1",
           },
         },
-        y:{
-          title:{
+        y: {
+          title: {
             display: true,
-            text: "Absorbance (-ln(I/IO))"
+            text: "Absorbance (-ln(I/IO))",
           },
-        }
-      }
-    }
+        },
+      },
+    };
 
-
-    return(
+    return (
       <div>
-        <Line
-          height={'600'}
-          width={'1000'}
-          data={fulldata}
-          options={options}
-        />
-
+        <Line height={"600"} width={"1000"} data={fulldata} options={options} />
       </div>
     );
   } else {
     return;
   }
-
 }
 
 export default Graph;

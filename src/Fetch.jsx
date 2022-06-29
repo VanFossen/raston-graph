@@ -1,7 +1,9 @@
 import React from "react";
 
-function Fetch({ setData }) {
+function Fetch({ params, setData, setLoading }) {
   async function fetchRadis() {
+    setLoading(true);
+
     let response = await fetch("https://api.radis.app/calculate-spectrum", {
       headers: {
         accept: "application/json, text/plain, */*",
@@ -19,7 +21,7 @@ function Fetch({ setData }) {
       },
       referrer: "https://www.radis.app/",
       referrerPolicy: "strict-origin-when-cross-origin",
-      body: '{"species":[{"molecule":"CO","mole_fraction":0.1}],"min_wavenumber_range":1900,"max_wavenumber_range":2300,"tgas":300,"tvib":null,"trot":null,"pressure":1.01325,"path_length":1,"simulate_slit":false,"mode":"absorbance","database":"hitran"}',
+      body: JSON.stringify(params),
       method: "POST",
       mode: "cors",
       credentials: "omit",
@@ -29,9 +31,14 @@ function Fetch({ setData }) {
     let dataObject = JSON.parse(data);
     
     setData(dataObject);
+    setLoading(false);
   }
 
-  return <button id="button" onClick={fetchRadis}>Perform Fetch Request</button>;
+  return (
+    <button id="button" onClick={fetchRadis}>
+      Perform Fetch Request
+    </button>
+  );
 }
 
 export default Fetch;

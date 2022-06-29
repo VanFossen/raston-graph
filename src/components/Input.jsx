@@ -1,5 +1,6 @@
 import React from "react";
 import Database from "./inputs/Database";
+import MaxWave from "./inputs/MaxWave";
 import MinWave from "./inputs/MinWave";
 
 function Input({ params, setParams }) {
@@ -9,19 +10,7 @@ function Input({ params, setParams }) {
 
       <MinWave params={params} setParams={setParams} />
 
-      <label htmlFor="max-range">
-        Wavenumber MAX range (cm<sup>-1</sup>)
-      </label>
-      <input
-        id="max-range"
-        type="number"
-        defaultValue={params.max_wavenumber_range}
-        min={500}
-        max={10000}
-        onChange={(e) =>
-          setParams({ ...params, max_wavenumber_range: e.target.value })
-        }
-      ></input>
+      <MaxWave params={params} setParams={setParams} />
 
       <label htmlFor="tgas">Tgas (K)</label>
       <input

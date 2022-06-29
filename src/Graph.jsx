@@ -1,7 +1,10 @@
 import React from "react";
 import {Line} from 'react-chartjs-2';
 import { Chart, registerables} from 'chart.js';
+import zoomPlugin from 'chartjs-plugin-zoom';
+
 Chart.register(...registerables);
+Chart.register(zoomPlugin);
 
 function Graph({data}) {
 
@@ -11,17 +14,31 @@ function Graph({data}) {
       datasets: [{
         label: '',
         data: data.data.y,
-        barThickness: 1,
         backgroundColor: 'purple',
         borderColor: 'hsl(30,88%,69%)'
 
       }]
     }
 
-    const options = {
+    const options ={
       plugins:{
         legend:{
           display: false
+        },
+        zoom: {
+          pan: {
+            enabled: true,
+            mode: 'xy'
+          },
+          zoom: {
+            wheel: {
+              enabled: true,
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'xy',
+          }
         }
       },
       scales:{

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import Fetch from "./Fetch";
-import Graph from "./Graph";
-import Input from "./Input";
-import Spinner from "./Spinner";
+import Fetch from "./components/Fetch";
+import Graph from "./components/Graph";
+import Input from "./components/Input";
+import Spinner from "./components/Spinner";
 
 function App() {
   const [data, setData] = useState("");
@@ -27,7 +27,7 @@ function App() {
       <Input params={params} setParams={setParams} />
       <Fetch params={params} setData={setData} setLoading={setLoading} />
       {loading && <Spinner />}
-      <Graph data={data} setLoading={setLoading}/>
+      <Graph data={data} setLoading={setLoading} />
     </div>
   );
 }

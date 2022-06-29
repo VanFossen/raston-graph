@@ -2,6 +2,7 @@ import React from "react";
 import Database from "./inputs/Database";
 import MaxWave from "./inputs/MaxWave";
 import MinWave from "./inputs/MinWave";
+import PathLength from "./inputs/PathLength";
 import Pressure from "./inputs/Pressure";
 import Tgas from "./inputs/Tgas";
 
@@ -18,13 +19,7 @@ function Input({ params, setParams }) {
 
       <Pressure params={params} setParams={setParams} />
 
-      <label htmlFor="path">Path length (cm)</label>
-      <input
-        id="path"
-        type="number"
-        defaultValue={params.path_length}
-        onChange={(e) => setParams({ ...params, path_length: e.target.value })}
-      ></input>
+      <PathLength params={params} setParams={setParams} />
 
       <label htmlFor="molecule">HITRAN 2020 Molecule</label>
       <select

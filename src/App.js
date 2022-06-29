@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Fetch from "./components/Fetch";
 import Graph from "./components/Graph";
-import Input from "./components/Input";
+import Form from "./components/Form";
 import Spinner from "./components/Spinner";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <Input params={params} setParams={setParams} />
+      <Form params={params} setParams={setParams} />
       <Fetch params={params} setData={setData} setLoading={setLoading} />
       {loading && <Spinner />}
       <Graph data={data} setLoading={setLoading} />

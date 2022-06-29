@@ -3,11 +3,11 @@ import React from "react";
 function MaxWave({ params, setParams }) {
   return (
     <div className="input">
-      <label htmlFor="max-range">
+      <label htmlFor="max-wave">
         Wavenumber MAX range (cm<sup>-1</sup>)
       </label>
       <input
-        id="max-range"
+        id="max-wave"
         type="number"
         defaultValue={params.max_wavenumber_range}
         min={500}

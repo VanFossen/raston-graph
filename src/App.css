@@ -21,14 +21,11 @@
   transform: rotate(-90deg);
 }
 
-/* Input */
-#input-div {
+/* Form */
+#fourm {
   display: flex;
-  flex-direction: column;
-}
-
-label {
-  padding-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .input {

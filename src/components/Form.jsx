@@ -11,7 +11,7 @@ import Tgas from "./inputs/Tgas";
 
 function Input({ params, setParams }) {
   return (
-    <div id="input-div">
+    <div id="fourm">
       <Database params={params} setParams={setParams} />
 
       <Mode params={params} setParams={setParams} />

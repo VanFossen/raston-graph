@@ -3,11 +3,11 @@ import React from "react";
 function MinWave({ params, setParams }) {
   return (
     <div className="input">
-      <label htmlFor="min-range">
+      <label htmlFor="min-wave">
         Wavenumber MIN range (cm<sup>-1</sup>)
       </label>
       <input
-        id="min-range"
+        id="min-wave"
         type="number"
         defaultValue={params.min_wavenumber_range}
         min={500}

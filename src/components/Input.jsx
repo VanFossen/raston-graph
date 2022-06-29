@@ -2,6 +2,7 @@ import React from "react";
 import Database from "./inputs/Database";
 import MaxWave from "./inputs/MaxWave";
 import MinWave from "./inputs/MinWave";
+import Tgas from "./inputs/Tgas";
 
 function Input({ params, setParams }) {
   return (
@@ -12,13 +13,7 @@ function Input({ params, setParams }) {
 
       <MaxWave params={params} setParams={setParams} />
 
-      <label htmlFor="tgas">Tgas (K)</label>
-      <input
-        id="tgas"
-        type="number"
-        defaultValue={params.tgas}
-        onChange={(e) => setParams({ ...params, tgas: e.target.value })}
-      ></input>
+      <Tgas params={params} setParams={setParams} />
 
       <label htmlFor="pressure">Pressure (Bar)</label>
       <input

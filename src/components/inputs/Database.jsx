@@ -2,7 +2,7 @@ import React from "react";
 
 function Database({ params, setParams }) {
   return (
-    <div class="input">
+    <div className="input">
       <label htmlFor="database">Database</label>
       <select
         id="database"

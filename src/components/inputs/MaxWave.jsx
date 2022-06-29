@@ -2,7 +2,7 @@ import React from "react";
 
 function MaxWave({ params, setParams }) {
   return (
-    <div class="input">
+    <div className="input">
       <label htmlFor="max-range">
         Wavenumber MAX range (cm<sup>-1</sup>)
       </label>

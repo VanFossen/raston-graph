@@ -2,6 +2,7 @@ import React from "react";
 import Database from "./inputs/Database";
 import MaxWave from "./inputs/MaxWave";
 import MinWave from "./inputs/MinWave";
+import Mode from "./inputs/Mode";
 import Molecule from "./inputs/Molecule";
 import MoleFraction from "./inputs/MoleFraction";
 import PathLength from "./inputs/PathLength";
@@ -12,6 +13,8 @@ function Input({ params, setParams }) {
   return (
     <div id="input-div">
       <Database params={params} setParams={setParams} />
+
+      <Mode params={params} setParams={setParams} />
 
       <MinWave params={params} setParams={setParams} />
 

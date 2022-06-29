@@ -2,6 +2,7 @@ import React from "react";
 import Database from "./inputs/Database";
 import MaxWave from "./inputs/MaxWave";
 import MinWave from "./inputs/MinWave";
+import Molecule from "./inputs/Molecule";
 import PathLength from "./inputs/PathLength";
 import Pressure from "./inputs/Pressure";
 import Tgas from "./inputs/Tgas";
@@ -21,14 +22,7 @@ function Input({ params, setParams }) {
 
       <PathLength params={params} setParams={setParams} />
 
-      <label htmlFor="molecule">HITRAN 2020 Molecule</label>
-      <select
-        id="molecule"
-        defaultValue={params.molecule}
-        onClick={(e) => setParams({ ...params, molecule: e.target.value })}
-      >
-        <option value="CO">CO</option>
-      </select>
+      <Molecule params={params} setParams={setParams} />
 
       <label htmlFor="mole">Mole Fraction</label>
       <input

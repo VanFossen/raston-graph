@@ -21,7 +21,7 @@ function Input({ params, setParams }) {
       >
         <option value="absorbance">Absorbance</option>
         <option value="radiance">Radiance</option>
-        <option value="transmittance">Transmittance</option>
+        <option value="transmittance_noslit">Transmittance</option>
       </select>
 
       <label htmlFor="min-range">

@@ -4,7 +4,9 @@ import Fetch from "./components/Fetch";
 import Form from "./components/Form";
 import Spinner from "./components/Spinner";
 import Error from "./components/Error";
-import Dygraphs from "./components/Dygraphs";
+
+// import ChartJS from "./components/graphs/ChartJS";
+import Dygraphs from "./components/graphs/Dygraphs";
 
 function App() {
   const [data, setData] = useState("");
@@ -42,18 +44,17 @@ function App() {
   return (
     <div className="App">
       <Form params={params} setParams={setParams} />
-
       <Fetch
         params={params}
         setData={setData}
         setLoading={setLoading}
         setError={setError}
       />
-
       {loading && <Spinner />}
       {error && <Error />}
 
-      <Dygraphs data={data} />
+      {!loading && <Dygraphs data={data} />}
+      {/* {!loading && <ChartJS data={data} />} */}
     </div>
   );
 }

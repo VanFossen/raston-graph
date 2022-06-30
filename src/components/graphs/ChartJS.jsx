@@ -6,7 +6,7 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(...registerables);
 Chart.register(zoomPlugin);
 
-function Graph({ data }) {
+function ChartJS({ data }) {
 
   if (data) {
     const fulldata = {
@@ -68,4 +68,4 @@ function Graph({ data }) {
   }
 }
 
-export default Graph;
+export default ChartJS;

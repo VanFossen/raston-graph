@@ -4,9 +4,7 @@ import Fetch from "./components/Fetch";
 import Form from "./components/Form";
 import Spinner from "./components/Spinner";
 import Error from "./components/Error";
-
-// import ChartJS from "./components/graphs/ChartJS";
-import Dygraphs from "./components/graphs/Dygraphs";
+import Plotly from "./components/graphs/Plotly";
 
 function App() {
   const [data, setData] = useState("");
@@ -53,8 +51,7 @@ function App() {
       {loading && <Spinner />}
       {error && <Error />}
 
-      {!loading && <Dygraphs data={data} />}
-      {/* {!loading && <ChartJS data={data} />} */}
+      {!loading && <Plotly data={data} params={params} />}
     </div>
   );
 }
